@@ -43,6 +43,7 @@ namespace ExamWithDesktop.Data.Repositories
             if (entity is null)
                 return false;
             dbSet.Remove(entity);
+
             return true;
         }
 

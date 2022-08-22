@@ -66,14 +66,12 @@
                     md:HintAssist.Hint="Search"
                     Foreground="White"
                     Opacity="0.8"
-                    TextChanged="SearchTxtBox_TextChanged" />
+                    TextChanged="SearchTxtBox_TextChanged" Cursor="Arrow" />
                 <ScrollViewer
                     Height="575"
                     VerticalAlignment="Bottom"
                     ScrollViewer.VerticalScrollBarVisibility="Visible">
-                    <ItemsControl Name="UsersList">
-                        <controls:ShortInfo x:Name="ShortInfoCard" />
-                    </ItemsControl>
+                    <ItemsControl Name="UsersList" />
                 </ScrollViewer>
             </Grid>
 

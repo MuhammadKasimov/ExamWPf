@@ -1,4 +1,4 @@
-﻿namespace ExamWithDesktop.Settings
+﻿namespace ExamWithDesktop.Service.Settings
 {
     public class Constants
     {

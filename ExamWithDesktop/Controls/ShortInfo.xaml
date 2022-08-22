@@ -9,13 +9,7 @@
     Width="250"
     Height="60"
     mc:Ignorable="d">
-    <Button
-        x:Name="UserShortInfoBtn"
-        Height="60"
-        Padding="10"
-        Background="#261C2C"
-        BorderThickness="0"
-        Click="UserShortInfoBtn_Click">
+    <Grid x:Name="UserShortInfoBtn" Height="60">
         <StackPanel
             Width="250"
             Height="60"
@@ -30,7 +24,7 @@
             <TextBlock
                 x:Name="NameTxt"
                 VerticalAlignment="Center"
-                FontSize="12"
+                FontSize="11"
                 FontWeight="Bold"
                 Foreground="White"
                 Text="Username" />
@@ -47,5 +41,5 @@
             </Border>
 
         </StackPanel>
-    </Button>
+    </Grid>
 </UserControl>

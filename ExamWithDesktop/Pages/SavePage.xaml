@@ -12,14 +12,41 @@
     mc:Ignorable="d">
 
     <Grid>
-        <StackPanel VerticalAlignment="Center">
+        <DockPanel
+            Width="250"
+            Margin="5"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top">
+            <StackPanel>
+                <Ellipse Width="100" Height="100">
+                    <Ellipse.Fill>
+                        <ImageBrush x:Name="PassportImg" />
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Button x:Name="PassportBtn" Click="PassportBtn_Click">
+                    <TextBlock Text="Choose Image" />
+                </Button>
+            </StackPanel>
+            <StackPanel>
+                <Ellipse Width="100" Height="100">
+                    <Ellipse.Fill>
+                        <ImageBrush x:Name="PortraitImg" />
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Button x:Name="PortraitBtn" Click="PortraitBtn_Click">
+                    <TextBlock Text="Choose Image" />
+                </Button>
+            </StackPanel>
+        </DockPanel>
+
+        <StackPanel VerticalAlignment="Bottom">
             <DockPanel Width="350" Margin="5">
                 <md:PackIcon
                     VerticalAlignment="Center"
                     Foreground="Gray"
                     Kind="Identifier" />
                 <TextBox
-                    x:Name="Id"
+                    x:Name="IdTxt"
                     Width="300"
                     md:HintAssist.Hint="Id"
                     Foreground="Snow"
@@ -61,81 +88,28 @@
                     Foreground="Snow"
                     Opacity="0.8" />
             </DockPanel>
-            <DockPanel Width="350" Margin="5">
-                <md:PackIcon
-                    Margin="0,0,8,0"
-                    VerticalAlignment="Center"
-                    Foreground="Gray"
-                    Kind="Passport" />
-                <TextBlock
-                    Margin="10"
-                    VerticalAlignment="Center"
-                    Foreground="Snow"
-                    Opacity="0.4"
-                    Text="Passport" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
                 <Button
-                    x:Name="PassportBtn"
-                    Width="160"
-                    Height="25"
-                    Margin="0,0,16,0"
-                    Padding="2"
-                    HorizontalAlignment="Right"
-                    md:HintAssist.Hint="Faculty"
-                    Click="PassportBtn_Click"
-                    Foreground="Snow"
-                    Opacity="0.8">
+                    x:Name="SaveBtn"
+                    Width="250"
+                    Margin="10"
+                    Click="SaveBtn_Click">
                     <StackPanel Orientation="Horizontal">
-                        <md:PackIcon Margin="2" Kind="Image" />
-                        <TextBlock Text="Choose Image" />
+                        <md:PackIcon
+                            Width="25"
+                            Height="25"
+                            Kind="ContentSaveOutline" />
+                        <TextBlock
+                            Margin="5"
+                            VerticalAlignment="Center"
+                            Text="Save" />
                     </StackPanel>
-                </Button>
-            </DockPanel>
 
-            <DockPanel Width="350" Margin="5">
-                <md:PackIcon
-                    Margin="0,0,8,0"
-                    VerticalAlignment="Center"
-                    Foreground="Gray"
-                    Kind="Portrait" />
-                <TextBlock
-                    Margin="10"
-                    VerticalAlignment="Center"
-                    Foreground="Snow"
-                    Opacity="0.4"
-                    Text="Portrait" />
-                <Button
-                    x:Name="PortraitBtn"
-                    Width="160"
-                    Height="25"
-                    Margin="0,0,16,0"
-                    Padding="2"
-                    HorizontalAlignment="Right"
-                    md:HintAssist.Hint="Faculty"
-                    Click="PortraitBtn_Click"
-                    Foreground="Snow"
-                    Opacity="0.8">
-                    <StackPanel Orientation="Horizontal">
-                        <md:PackIcon Margin="2" Kind="Image" />
-                        <TextBlock Text="Choose Image" />
-                    </StackPanel>
                 </Button>
-            </DockPanel>
-            <Button
-                x:Name="SaveBtn"
-                Width="250"
-                Margin="30"
-                Click="SaveBtn_Click">
-                <StackPanel Orientation="Horizontal">
-                    <md:PackIcon
-                        Width="25"
-                        Height="25"
-                        Kind="ContentSaveOutline" />
-                    <TextBlock
-                        Margin="5"
-                        VerticalAlignment="Center"
-                        Text="Add" />
-                </StackPanel>
-            </Button>
+                <Button Background="Red" Click="Button_Click">
+                    <md:PackIcon Kind="DeleteOutline"/>
+                </Button>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>

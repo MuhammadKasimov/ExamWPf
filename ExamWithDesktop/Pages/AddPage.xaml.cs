@@ -1,7 +1,6 @@
-﻿using ExamTask.Main.Services;
-using ExamWithDesktop.Domain.Entities;
-using ExamWithDesktop.WPF.Interfaces;
-using ExamWithDesktop.WPF.Models;
+﻿using ExamWithDesktop.Service.Interfaces;
+using ExamWithDesktop.Service.Models;
+using ExamWithDesktop.Service.Services;
 using ExamWithDesktop.WPF.Windows;
 using System.Threading;
 using System.Windows.Controls;
@@ -13,14 +12,12 @@ namespace ExamWithDesktop.Pages
     /// </summary>
     public partial class AddPage : Page
     {
-        readonly IUserService userService;
-        User user;
-        UserForCreation userForCreation;
+        private readonly IUserService userService;
+        private readonly UserForCreation userForCreation;
         public AddPage()
         {
             userForCreation = new UserForCreation();
             userService = new UserService();
-            user = new User();
             InitializeComponent();
         }
 
@@ -30,13 +27,14 @@ namespace ExamWithDesktop.Pages
             userForCreation.LastName = LastNameTxt.Text;
             userForCreation.Faculty = FacultyTxt.Text;
 
-
             Thread thread = new Thread(async () =>
             {
                 await userService.CreateAsync(userForCreation);
             });
             thread.Start();
-            new SuccessWindow().Show();
+            SuccessWindow successWindow = new SuccessWindow();
+            successWindow.ShowDialog();
+
         }
     }
 }

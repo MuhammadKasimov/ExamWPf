@@ -1,10 +1,11 @@
-﻿using ExamTask.Main.Services;
-using ExamWithDesktop.Domain.Entities;
-using ExamWithDesktop.WPF.Interfaces;
-using ExamWithDesktop.WPF.Models;
+﻿using ExamWithDesktop.Domain.Entities;
+using ExamWithDesktop.Service.Interfaces;
+using ExamWithDesktop.Service.Models;
+using ExamWithDesktop.Service.Services;
 using ExamWithDesktop.WPF.Windows;
 using System;
 using System.Windows.Controls;
+using System.Windows.Media.Imaging;
 
 namespace ExamWithDesktop.WPF.Pages
 {
@@ -16,7 +17,7 @@ namespace ExamWithDesktop.WPF.Pages
         private string pathOfPassportImage;
         private string portraitPath;
         readonly IUserService userService;
-        User user;
+        private User user;
         UserForCreation userForCreation;
         public SavePage()
         {
@@ -30,7 +31,7 @@ namespace ExamWithDesktop.WPF.Pages
         {
             long id;
 
-            if (long.TryParse(Id.Text, out id))
+            if (long.TryParse(IdTxt.Text, out id))
             {
                 user = await userService.GetAsync(id);
                 if (user != null)
@@ -45,20 +46,22 @@ namespace ExamWithDesktop.WPF.Pages
 
                     await userService.UploadImageAsync(id, pathOfPassportImage, portraitPath);
 
-                    new SuccessWindow().Show();
+                    new SuccessWindow().ShowDialog();
                 }
 
                 else
-                    new ErrorWindow().Show();
+                    new ErrorWindow().ShowDialog();
             }
             else
-                new ErrorWindow().Show();
+                new ErrorWindow().ShowDialog();
 
         }
 
         private void PassportBtn_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             pathOfPassportImage = ChooseFile();
+            PassportImg.ImageSource = new BitmapImage(new Uri(pathOfPassportImage));
+
         }
 
         private string ChooseFile()
@@ -79,6 +82,22 @@ namespace ExamWithDesktop.WPF.Pages
         private void PortraitBtn_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             portraitPath = ChooseFile();
+
+            PortraitImg.ImageSource = new BitmapImage(new Uri(portraitPath));
+        }
+
+        private async void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            long id;
+            if (long.TryParse(IdTxt.Text, out id))
+            {
+                if (await userService.DeleteAsync(id))
+                    new SuccessWindow().ShowDialog();
+                else
+                    new ErrorWindow().ShowDialog();
+            }
+            else
+                new ErrorWindow().ShowDialog();
         }
     }
 }

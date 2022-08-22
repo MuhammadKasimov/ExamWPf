@@ -48,7 +48,7 @@
             <Button
                 x:Name="SaveBtn"
                 Width="250"
-                Margin="30"
+                Margin="10"
                 Click="SaveBtn_Click">
                 <StackPanel Orientation="Horizontal">
                     <md:PackIcon

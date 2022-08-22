@@ -1,4 +1,4 @@
-﻿namespace ExamWithDesktop.WPF.Models
+﻿namespace ExamWithDesktop.Service.Models
 {
     public class UserForCreation
     {

@@ -1,5 +1,5 @@
-﻿using ExamTask.Main.Services;
-using ExamWithDesktop.WPF.Interfaces;
+﻿using ExamWithDesktop.Service.Interfaces;
+using ExamWithDesktop.Service.Services;
 using ExamWithDesktop.WPF.Windows;
 using System.Windows.Controls;
 
@@ -24,12 +24,12 @@ namespace ExamWithDesktop.Pages
             if (long.TryParse(IdTxtBox.Text, out id))
             {
                 if (await userService.DeleteAsync(id))
-                    new SuccessWindow().Show();
+                    new SuccessWindow().ShowDialog();
                 else
-                    new ErrorWindow().Show();
+                    new ErrorWindow().ShowDialog();
             }
             else
-                new ErrorWindow().Show();
+                new ErrorWindow().ShowDialog();
         }
     }
 }

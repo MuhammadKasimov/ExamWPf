@@ -1,9 +1,9 @@
 ﻿using ExamWithDesktop.Data.IRepositories;
 using ExamWithDesktop.Data.Repositories;
 using ExamWithDesktop.Domain.Entities;
-using ExamWithDesktop.Settings;
-using ExamWithDesktop.WPF.Interfaces;
-using ExamWithDesktop.WPF.Models;
+using ExamWithDesktop.Service.Interfaces;
+using ExamWithDesktop.Service.Models;
+using ExamWithDesktop.Service.Settings;
 using Mapster;
 using Newtonsoft.Json;
 using System;
@@ -14,7 +14,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ExamTask.Main.Services
+namespace ExamWithDesktop.Service.Services
 {
     public class UserService : IUserService
     {

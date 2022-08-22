@@ -1,9 +1,9 @@
 ﻿using ExamWithDesktop.Domain.Entities;
-using ExamWithDesktop.WPF.Models;
+using ExamWithDesktop.Service.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace ExamWithDesktop.WPF.Interfaces
+namespace ExamWithDesktop.Service.Interfaces
 {
     public interface IUserService
     {
