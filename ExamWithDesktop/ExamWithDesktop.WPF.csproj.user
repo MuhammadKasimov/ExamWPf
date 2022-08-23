@@ -13,9 +13,6 @@
     <Compile Update="Pages\AddPage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Pages\DeletePage.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="Pages\SavePage.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -34,9 +31,6 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\AddPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Update="Pages\DeletePage.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Pages\SavePage.xaml">

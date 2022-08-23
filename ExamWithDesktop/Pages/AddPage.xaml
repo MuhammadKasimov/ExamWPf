@@ -12,7 +12,33 @@
     mc:Ignorable="d">
 
     <Grid>
-        <StackPanel VerticalAlignment="Center">
+        <DockPanel
+            Width="250"
+            Margin="0,20,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top">
+            <StackPanel>
+                <Ellipse Width="100" Height="100">
+                    <Ellipse.Fill>
+                        <ImageBrush x:Name="PassportImg" />
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Button x:Name="PassportBtn" Click="PassportBtn_Click">
+                    <TextBlock Text="Choose Image" />
+                </Button>
+            </StackPanel>
+            <StackPanel>
+                <Ellipse Width="100" Height="100">
+                    <Ellipse.Fill>
+                        <ImageBrush x:Name="PortraitImg" />
+                    </Ellipse.Fill>
+                </Ellipse>
+                <Button x:Name="PortraitBtn" Click="PortraitBtn_Click">
+                    <TextBlock Text="Choose Image" />
+                </Button>
+            </StackPanel>
+        </DockPanel>
+        <StackPanel Margin="0,60,0,0" VerticalAlignment="Center">
             <TextBox
                 x:Name="FirstNameTxt"
                 Width="300"

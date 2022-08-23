@@ -14,7 +14,7 @@
     <Grid>
         <DockPanel
             Width="250"
-            Margin="5"
+            Margin="0,25,0,0"
             HorizontalAlignment="Center"
             VerticalAlignment="Top">
             <StackPanel>
@@ -39,7 +39,7 @@
             </StackPanel>
         </DockPanel>
 
-        <StackPanel VerticalAlignment="Bottom">
+        <StackPanel Margin="0,100,0,0" VerticalAlignment="Center">
             <DockPanel Width="350" Margin="5">
                 <md:PackIcon
                     VerticalAlignment="Center"
@@ -88,7 +88,7 @@
                     Foreground="Snow"
                     Opacity="0.8" />
             </DockPanel>
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
                 <Button
                     x:Name="SaveBtn"
                     Width="250"
@@ -107,7 +107,7 @@
 
                 </Button>
                 <Button Background="Red" Click="Button_Click">
-                    <md:PackIcon Kind="DeleteOutline"/>
+                    <md:PackIcon Kind="DeleteOutline" />
                 </Button>
             </StackPanel>
         </StackPanel>

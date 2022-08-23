@@ -60,7 +60,8 @@ namespace ExamWithDesktop.WPF.Pages
         private void PassportBtn_Click(object sender, System.Windows.RoutedEventArgs e)
         {
             pathOfPassportImage = ChooseFile();
-            PassportImg.ImageSource = new BitmapImage(new Uri(pathOfPassportImage));
+            if (pathOfPassportImage != null)
+                PassportImg.ImageSource = new BitmapImage(new Uri(pathOfPassportImage));
 
         }
 
@@ -83,7 +84,8 @@ namespace ExamWithDesktop.WPF.Pages
         {
             portraitPath = ChooseFile();
 
-            PortraitImg.ImageSource = new BitmapImage(new Uri(portraitPath));
+            if (portraitPath != null)
+                PortraitImg.ImageSource = new BitmapImage(new Uri(portraitPath));
         }
 
         private async void Button_Click(object sender, System.Windows.RoutedEventArgs e)

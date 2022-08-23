@@ -29,15 +29,18 @@
             </Grid.ColumnDefinitions>
 
             <Grid Grid.Column="0" Background="#3E2C41">
-                <ToggleButton
-                    Width="65"
-                    Height="50"
+                <Button
+                    x:Name="AddBtn"
+                    Height="65"
                     Padding="5"
                     VerticalAlignment="Top"
-                    Background="Transparent"
-                    BorderThickness="0"
-                    Foreground="#00A8CC"
-                    Style="{StaticResource MaterialDesignHamburgerToggleButton}" />
+                    Background="#0E1621"
+                    Click="AddBtn_Click">
+                    <md:PackIcon
+                        Width="50"
+                        Height="50"
+                        Kind="UserAddOutline" />
+                </Button>
                 <Button
                     x:Name="UpdateBtn"
                     Height="65"
@@ -64,9 +67,10 @@
                     VerticalAlignment="Top"
                     VerticalContentAlignment="Center"
                     md:HintAssist.Hint="Search"
+                    Cursor="Arrow"
                     Foreground="White"
                     Opacity="0.8"
-                    TextChanged="SearchTxtBox_TextChanged" Cursor="Arrow" />
+                    TextChanged="SearchTxtBox_TextChanged" />
                 <ScrollViewer
                     Height="575"
                     VerticalAlignment="Bottom"
@@ -85,65 +89,7 @@
                     Grid.Row="0"
                     Margin="10"
                     VerticalAlignment="Top"
-                    Orientation="Horizontal">
-                    <Button
-                        x:Name="SaveBtn"
-                        Width="200"
-                        Height="70"
-                        Margin="6"
-                        Background="#0E1621"
-                        Click="SaveBtn_Click">
-                        <StackPanel Orientation="Horizontal">
-                            <md:PackIcon
-                                Width="50"
-                                Height="50"
-                                Kind="ContentSaveAllOutline" />
-                            <TextBlock
-                                Margin="10"
-                                VerticalAlignment="Center"
-                                FontSize="20"
-                                Text="Save" />
-                        </StackPanel>
-                    </Button>
-                    <Button
-                        x:Name="DeleteBtn"
-                        Width="200"
-                        Height="70"
-                        Margin="6"
-                        Background="#0E1621"
-                        Click="DeleteBtn_Click">
-                        <StackPanel Orientation="Horizontal">
-                            <md:PackIcon
-                                Width="50"
-                                Height="50"
-                                Kind="DeleteOutline" />
-                            <TextBlock
-                                Margin="10"
-                                VerticalAlignment="Center"
-                                FontSize="20"
-                                Text="Delete" />
-                        </StackPanel>
-                    </Button>
-                    <Button
-                        x:Name="AddBtn"
-                        Width="200"
-                        Height="70"
-                        Margin="6"
-                        Background="#0E1621"
-                        Click="AddBtn_Click">
-                        <StackPanel Orientation="Horizontal">
-                            <md:PackIcon
-                                Width="50"
-                                Height="50"
-                                Kind="UserAddOutline" />
-                            <TextBlock
-                                Margin="10"
-                                VerticalAlignment="Center"
-                                FontSize="20"
-                                Text="Add" />
-                        </StackPanel>
-                    </Button>
-                </StackPanel>
+                    Orientation="Horizontal" />
 
                 <Frame
                     x:Name="UserFrame"

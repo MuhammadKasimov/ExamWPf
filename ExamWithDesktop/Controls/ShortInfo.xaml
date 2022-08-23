@@ -28,18 +28,6 @@
                 FontWeight="Bold"
                 Foreground="White"
                 Text="Username" />
-            <Border
-                Width="25"
-                Height="15"
-                Margin="5"
-                Background="Red"
-                CornerRadius="10">
-                <TextBlock
-                    x:Name="IdTxt"
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center" />
-            </Border>
-
         </StackPanel>
     </Grid>
 </UserControl>

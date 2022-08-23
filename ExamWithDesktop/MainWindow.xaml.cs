@@ -23,7 +23,6 @@ namespace ExamWithDesktop
     public partial class MainWindow : Window
     {
         private readonly AddPage addPage;
-        private readonly DeletePage deletePage;
         private IEnumerable<User> allUsers;
         private readonly UserService userService;
         Thread thread;
@@ -31,7 +30,6 @@ namespace ExamWithDesktop
         public MainWindow()
         {
             InitializeComponent();
-            deletePage = new DeletePage();
             addPage = new AddPage();
             userService = new UserService();
         }
@@ -68,7 +66,6 @@ namespace ExamWithDesktop
                     button.Click += UserFullInfoButton_Click;
                     ShortInfo shortInfo = new ShortInfo();
                     shortInfo.NameTxt.Text = user.FirstName + " " + user.LastName;
-                    shortInfo.IdTxt.Text = user.Id.ToString();
                     shortInfo.Id = user.Id;
                     shortInfo.UserImg.ImageSource = user.Image is not null
                         ? new BitmapImage(new Uri("https://talabamiz.uz/" + user.Image.Path))
@@ -110,7 +107,7 @@ namespace ExamWithDesktop
             }
             else
             {
-                new ErrorWindow().Show();
+                new ErrorWindow().ShowDialog();
             }
         }
 
@@ -119,10 +116,6 @@ namespace ExamWithDesktop
             UserFrame.Content = addPage;
         }
 
-        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
-        {
-            UserFrame.Content = deletePage;
-        }
 
 
         private void SearchTxtBox_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
